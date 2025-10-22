@@ -1,0 +1,72 @@
+.block {
+  &-service {
+    background-color: $secondary;
+    box-shadow: 0 0 30px $primary;
+    p {
+      font-size: 13px;
+    }
+    span {
+      display: flex;
+      color: $primary;
+
+      i {
+        @include font-size(50px);
+      }
+    }
+  }
+  &-project {
+    position: relative;
+    overflow: hidden;
+    &:hover {
+      .block-project__content {
+        height: 100%;
+      }
+    }
+
+    &__img {
+      width: 100%;
+      position: relative;
+      height: 300px;
+      z-index: -1;
+    }
+    &__content {
+      left: 0;
+      bottom: 0;
+      background: linear-gradient(rgba(0, 0, 0, 0.1), $primary);
+      transition: height 0.5s;
+      position: absolute;
+      height: 0;
+      overflow: hidden;
+    }
+    &__icon {
+      color: $black;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      background-color: $white;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.5s ease;
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+  &-image {
+    height: 300px;
+    img {
+      padding: 10px;
+    }
+  }
+  &-about {
+    &-skills {
+      &__image {
+        height: 80px;
+        width: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

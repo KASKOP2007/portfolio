@@ -1,0 +1,92 @@
+.home {
+  &-hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    @include media-breakpoint-down(md) {
+      height: 50vh;
+    }
+    @include media-breakpoint-down(sm) {
+      height: 35vh;
+    }
+  }
+  .services {
+    &-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .skills {
+    &-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-technical {
+      &__icon {
+        color: $primary;
+        font-size: 23px;
+      }
+      &__title {
+        font-size: 17px;
+      }
+    }
+    &-professional {
+      &__title {
+        font-size: 17px;
+      }
+    }
+  }
+
+  .contact {
+    &-content {
+      &__email {
+        color: $white;
+        transition: all 0.4s ease;
+        &:hover {
+          color: $primary;
+        }
+      }
+      &__phone {
+        color: $white;
+        transition: all 0.4s ease;
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+}
+
+.skills {
+  &-professional {
+    &__progress {
+      position: relative;
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &::before {
+        content: "";
+        position: absolute;
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        background-color: $gray-900;
+      }
+    }
+    &__percent {
+      z-index: 91741;
+    }
+  }
+}

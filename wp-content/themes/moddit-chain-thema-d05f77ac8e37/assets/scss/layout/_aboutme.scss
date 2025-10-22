@@ -1,0 +1,52 @@
+.hero {
+  &-about {
+    position: relative;
+    &-image {
+      position: relative;
+      height: 440px;
+      @include media-breakpoint-down(xl) {
+        height: 400px;
+      }
+      @include media-breakpoint-down(lg) {
+        height: 320px;
+      }
+      @include media-breakpoint-down(sm) {
+        height: 240px;
+      }
+      img {
+        border-radius: 0 0 30px 30px;
+      }
+    }
+    &-content {
+      &__title {
+        z-index: 23912128;
+        text-align: center;
+        position: absolute;
+        top: 25%;
+        left: 35%;
+        transform: translate(-50%, -50%);
+        color: white;
+      }
+      &__text {
+        z-index: 23912128;
+        text-align: center;
+        position: absolute;
+        top: 70%;
+        left: 60%;
+        transform: translate(-50%, -50%);
+        color: white;
+      }
+    }
+  }
+}
+
+.intro-content-text {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+
+  &__content {
+    width: 100%;
+    word-wrap: break-word;
+  }
+}

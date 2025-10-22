@@ -1,0 +1,3 @@
+@function breakpoint-custom-max($size) {
+  @return if($size and $size > 0, $size - 0.02, null);
+}

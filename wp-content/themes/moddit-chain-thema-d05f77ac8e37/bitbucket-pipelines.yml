@@ -1,0 +1,52 @@
+# Moddit WordPress theme (Laravel Mix) pipeline
+
+# Stappen
+# - NPM install
+# - Theme files builden d.m.v Laravel Mix en build artifact opslaan
+# - PHP build (composer install)
+# - Build files syncen (d.m.v rsync) via SSH naar de server
+
+# Meer informatie en uitleg zijn te vinden in de moddit-bitbucket-pipelines repository:
+# https://bitbucket.org/moddit/moddit-bitbucket-pipelines
+
+definitions:
+  caches:
+    npm: $HOME/.npm
+
+pipelines:
+  branches:
+    master:
+      - step:
+          name: Build production files
+          image: node:lts-slim
+          caches:
+            - npm
+          script:
+            - npm ci
+            - npm run production
+          artifacts:
+            - dist/**
+      - step:
+          name: PHP build
+          image: php:8.1-fpm
+          caches:
+            - composer
+          script:
+            - apt-get update && apt-get install -qy curl
+            - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+            - composer install --no-ansi --no-dev --no-interaction --no-plugins --no-progress --no-scripts --optimize-autoloader --prefer-dist --ignore-platform-reqs
+          artifacts:
+            - vendor/**
+      - step:
+          name: Upload files to production
+          deployment: production
+          caches:
+            - docker
+          script:
+            - pipe: atlassian/rsync-deploy:0.11.1
+              variables:
+                USER: $DEPLOY_USER
+                SERVER: $DEPLOY_HOST
+                REMOTE_PATH: '~/domains/$DEPLOY_DOMAIN/public_html/$DEPLOY_PATH'
+                LOCAL_PATH: '${BITBUCKET_CLONE_DIR}/'
+                EXTRA_ARGS: '-av --delete --exclude-from=deployment-exclude-list.txt'

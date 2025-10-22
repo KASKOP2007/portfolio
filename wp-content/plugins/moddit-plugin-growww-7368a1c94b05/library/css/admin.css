@@ -1,0 +1,4 @@
+.ptr {cursor: pointer;}
+.information {border-left: 2px solid lightblue; padding: 5px 5px; font-style: italic;}
+.js-scan-locations input.highlight,
+    .js-scan-results input.highlight {border-width: 2px;}

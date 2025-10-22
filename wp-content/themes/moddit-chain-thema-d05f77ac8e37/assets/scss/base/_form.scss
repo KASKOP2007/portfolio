@@ -1,0 +1,80 @@
+.gform {
+    &_heading {
+        display: none !important;
+    }
+    &_submission_error,
+    &_confirmation_message {
+        @extend .content-container;
+        display: flex;
+        line-height: 1.5;
+        &:before {
+            font-family: $font-family-fontawesome;
+            font-weight: $font-weight-bold;
+            margin-right: 12px;
+        }
+    }
+    &_submission_error {
+        @include font-size(18px);
+        align-items: baseline;
+        margin-bottom: 16px;
+        margin-top: 24px;
+        @include media-breakpoint-down(xl) {
+            @include font-size(16px);
+        }
+        @include media-breakpoint-down(sm) {
+            @include font-size(15px);
+        }
+        &:before {
+            content: '\f071';
+            color: $danger;
+            @include font-size(13px);
+        }
+    }
+    &_confirmation_message {
+        &:before {
+            color: $success;
+            content: '\f058';
+        }
+    }
+    &_ajax_spinner {
+        display: none;
+    }
+    &_button {
+        box-shadow: none;
+        border: 0;
+    }
+}
+.gfield {
+    .form {
+        &-control {
+            border: 1px solid $black;
+            &:focus {
+                border: 1px solid $secondary;
+                box-shadow: none;
+            }
+            @include media-breakpoint-down(lg) {
+                padding: $input-padding-y-lg $input-padding-x-lg;
+                @include font-size(15px);
+            }
+        }
+    }
+    &_label {
+        @include font-size(15px);
+        font-weight: $font-weight-normal;
+        margin-bottom: 4px;
+    }
+    &_error {
+        .form-control,
+        .form-select {
+            @extend .is-invalid;
+            background-size: 24px;
+            padding-right: unset;
+        }
+    }
+    &_visibility_hidden, &_validation_message, &_required {
+        display: none;
+    }
+    textarea {
+        max-height: 152px;
+    }
+}

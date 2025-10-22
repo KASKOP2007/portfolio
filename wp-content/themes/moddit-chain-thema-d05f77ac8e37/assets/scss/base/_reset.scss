@@ -1,0 +1,161 @@
+html {
+  overflow-x: hidden;
+}
+body {
+  height: 100vh;
+  background-color: $gray-900;
+  color: $white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  max-width: 100vw;
+  overflow-x: hidden;
+  &.logged-in {
+    &:before {
+      @include font-size(11px);
+      background-color: $primary;
+      bottom: 0;
+      color: $white;
+      content: "above";
+      height: 32px;
+      letter-spacing: 0.15em;
+      line-height: 32px;
+      padding: 0 10px;
+      position: fixed;
+      right: 0;
+      text-align: center;
+      text-transform: uppercase;
+      width: auto;
+      z-index: 9999999;
+      @include media-breakpoint-down(xxl) {
+        content: "(xxl)";
+      }
+      @include media-breakpoint-down(xl) {
+        content: "(xl)";
+      }
+      @include media-breakpoint-down(lg) {
+        content: "(lg)";
+      }
+      @include media-breakpoint-down(md) {
+        content: "(md)";
+      }
+      @include media-breakpoint-down(sm) {
+        content: "(sm)";
+      }
+    }
+  }
+}
+.container {
+  @include media-breakpoint-down(sm) {
+    padding: 0 30px;
+  }
+  @include breakpoint-custom-down(360px) {
+    padding: 0 20px;
+  }
+}
+#wpadminbar {
+  clip-path: inset(0 calc(100% - 35px) 0 0);
+  @media screen and (max-width: 782px) {
+    display: none !important;
+  }
+  &:hover {
+    clip-path: unset;
+  }
+}
+//
+// Default classes
+//
+.reset-list {
+  @include reset-list();
+}
+.img-abs-center {
+  @include img-abs-center;
+  &--contain {
+    object-fit: contain;
+  }
+}
+//
+// Buttons
+//
+.btns {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.btn {
+  border: 2px solid $blue;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  box-shadow: 0 0 25px $blue;
+  &:hover {
+    box-shadow: 0 0 100px $blue;
+  }
+  &-link {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid $blue;
+    color: $blue;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    text-decoration: none;
+    &:hover {
+      background-color: $blue;
+      color: $black;
+      box-shadow: 0 0 25px $blue;
+    }
+  }
+}
+
+.social-media {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  @include reset-list;
+  li {
+    a {
+      text-decoration: none;
+      span {
+        display: none;
+      }
+      i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background: transparent;
+        border: 2px solid $blue;
+        color: $blue;
+        border-radius: 50%;
+        transition: all 0.5s ease;
+        text-decoration: none;
+        &:hover {
+          background-color: $blue;
+          color: $black;
+          box-shadow: 0 0 25px $blue;
+        }
+      }
+    }
+  }
+}
+
+.progress {
+  background-color: $gray-800;
+
+  &-bar {
+    border-radius: 10px;
+    color: $black;
+    background-color: $primary;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: fill-bar 1s 0.5s cubic-bezier(0, 1, 0, 1) forwards;
+  }
+}
+
+@keyframes fill-bar {
+  to {
+    transform: scaleX(1);
+  }
+}

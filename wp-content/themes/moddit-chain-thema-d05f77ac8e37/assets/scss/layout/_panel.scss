@@ -1,0 +1,44 @@
+.panel {
+  background-color: $secondary;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  visibility: hidden;
+  width: 100vw;
+  padding: 60px 0 10px 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 1vh;
+  &__inner {
+    overflow-y: auto;
+    .header {
+      &-nav {
+        padding: 10px 0 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        overflow-y: auto;
+        li {
+          a {
+            @include font-size(18px);
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+html.lock {
+  overflow-y: hidden;
+  .panel {
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+  }
+  .hero-title {
+    display: none !important;
+  }
+}

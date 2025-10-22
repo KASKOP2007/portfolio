@@ -1,0 +1,81 @@
+@mixin calc-cs($container_size, $plus: false) {
+    @if $plus != false {
+        width: calc( #{$plus} + ( ( ( 100vw - #{map-get($container-max-widths, #{$container_size})} ) + #{$grid-gutter-width} ) / 2 ) );
+    } @else {
+        width: calc( ( ( 100vw - #{map-get($container-max-widths, #{$container_size})} ) + #{$grid-gutter-width} ) / 2 );
+    }
+}
+
+@mixin calc-cs-placement($container_size, $side: false) {
+    @if $side == 'left' {
+        left: calc( -1 * ( ( ( 100vw - #{map-get($container-max-widths, #{$container_size})} ) + #{$grid-gutter-width} ) / 2 ) );
+    } @else if $side == 'right' {
+        right: calc( -1 * ( ( ( 100vw - #{map-get($container-max-widths, #{$container_size})} ) + #{$grid-gutter-width} ) / 2 ) );
+    } @else {
+        @warn "$side moet gelijk zijn aan left of right";
+    }
+}
+
+@mixin dot-this($lines: 3, $fsize: $font-size-base, $lheight: $line-height-base, $max-height: false) {
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+    overflow: hidden;
+    display: -webkit-box;
+    @if $fsize != null { // RFS CALCULASEAN
+        $val: rfs-value($fsize);
+        $fluidVal: rfs-fluid-value($fsize);
+        @if $val == $fluidVal {
+            @if $max-height {
+                max-height: calc( #{$lines} * ( #{$val} * #{$lheight} ) );
+            }
+            @else {
+                height: calc( #{$lines} * ( #{$val} * #{$lheight} ) );
+            }
+        }
+        @else {
+            @include _rfs-rule {
+                @if $max-height {
+                    max-height: calc( #{$lines} * ( #{if($rfs-mode == max-media-query, $val, $fluidVal)} * #{$lheight} ) );
+                }
+                @else {
+                    height: calc( #{$lines} * ( #{if($rfs-mode == max-media-query, $val, $fluidVal)} * #{$lheight} ) );
+                }
+            }
+            @include _rfs-media-query-rule {
+                @if $max-height {
+                    max-height: calc( #{$lines} * ( #{if($rfs-mode == max-media-query, $fluidVal, $val)} * #{$lheight} ) );
+                }
+                @else {
+                    height: calc( #{$lines} * ( #{if($rfs-mode == max-media-query, $fluidVal, $val)} * #{$lheight} ) );
+                }
+            }
+        }
+    }
+}
+
+@mixin img-abs-center($fit: cover, $position: center center){
+    height: 100%;
+    left: 0;
+    object-fit: $fit;
+    object-position: $position;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+@mixin reset-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin breakpoint-custom-down($size) {
+    $max: breakpoint-custom-max($size);
+    @if $max {
+        @media (max-width: $max) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}

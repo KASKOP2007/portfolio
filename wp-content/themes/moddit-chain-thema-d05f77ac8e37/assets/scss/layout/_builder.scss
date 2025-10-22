@@ -1,0 +1,13 @@
+.builder {
+  &-row {
+    margin-block: 80px;
+  }
+  &-contentmedia {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    &__image {
+      height: 500px;
+    }
+  }
+}

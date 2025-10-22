@@ -1,0 +1,95 @@
+# Translation of Plugins - Advanced Custom Fields: Gravity Forms Add-on - Stable (latest release) in Dutch
+# This file is distributed under the same license as the Plugins - Advanced Custom Fields: Gravity Forms Add-on - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2024-06-05 12:41:58+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.1\n"
+"Language: nl\n"
+"Project-Id-Version: Plugins - Advanced Custom Fields: Gravity Forms Add-on - Stable (latest release)\n"
+
+#. Description of the plugin
+#: acf-gravityforms-add-on.php
+msgid "Provides an Advanced Custom Field which allows a WordPress editorial user or administrator to select a Gravity Form as part of a field group configuration."
+msgstr "Biedt een Advanced Custom Field waarmee een WordPress redactie gebruiker of beheerder een Gravity Form kan selecteren als onderdeel van een veldgroep configuratie."
+
+#: resources/Field.php:27 resources/FieldForV4.php:41
+msgid "Gravity Form"
+msgstr "Gravity Form"
+
+#. Author URI of the plugin
+#: acf-gravityforms-add-on.php
+msgid "http://www.sayhello.ch/"
+msgstr "http://www.sayhello.ch/"
+
+#. Author of the plugin
+#: acf-gravityforms-add-on.php
+msgid "Say Hello GmbH"
+msgstr "Say Hello GmbH"
+
+#: resources/Field.php:58 resources/FieldForV4.php:83
+msgid "Form ID"
+msgstr "Formulier ID"
+
+#: resources/Field.php:57 resources/FieldForV4.php:82
+msgid "Form Object"
+msgstr "Formulier object"
+
+#: resources/Notices.php:66
+msgid "Warning: You need to <a href=\"%s\">Activate Advanced Custom Fields</a> in order to use the Advanced Custom Fields: Gravityforms Add-on."
+msgstr "Waarschuwing: Je moet <a href=\"%s\">Advanced Custom Fields activeren</a> om de Advanced Custom Fields: Gravityforms Add-on te kunnen gebruiken."
+
+#: resources/Notices.php:51
+msgid " Warning: There are no active forms. You need to <a href=\"%s\">Create a New Form</a> in order to use the Advanced Custom Fields: Gravityforms Add-on."
+msgstr "Waarschuwing: Er zijn geen actieve formulieren. Je moet <a href=\"%s\">een nieuw formulier creëren</a> om de Advanced Custom Fields: Gravityforms Add-on te kunnen gebruiken."
+
+#: resources/Notices.php:31
+msgid "Warning: You need to <a href=\"%s\">Activate Gravityforms</a> in order to use the Advanced Custom Fields: Gravityforms Add-on."
+msgstr "Waarschuwing: Je moet <a href=\"%s\">Gravityforms activeren</a> om de Advanced Custom Fields: Gravityforms Add-on te kunnen gebruiken."
+
+#. Plugin URI of the plugin
+#: acf-gravityforms-add-on.php
+msgid "https://github.com/sayhellogmbh/acf-gravityforms-add-on"
+msgstr "https://github.com/sayhellogmbh/acf-gravityforms-add-on"
+
+#. Plugin Name of the plugin
+#: acf-gravityforms-add-on.php
+msgid "Advanced Custom Fields: Gravity Forms Add-on"
+msgstr "Advanced Custom Fields: Gravity Forms Add-on"
+
+#: resources/Field.php:131
+msgid "- Select a form -"
+msgstr "- Selecteer een formulier -"
+
+#: resources/Field.php:76 resources/FieldForV4.php:111
+msgid "Select multiple values?"
+msgstr "Selecteer meerdere opties?"
+
+#: resources/Field.php:69 resources/Field.php:81 resources/FieldForV4.php:102
+#: resources/FieldForV4.php:121
+msgid "No"
+msgstr "Nee"
+
+#: resources/Field.php:68 resources/Field.php:80 resources/FieldForV4.php:101
+#: resources/FieldForV4.php:120
+msgid "Yes"
+msgstr "Ja"
+
+#: resources/Field.php:64 resources/FieldForV4.php:92
+msgid "Allow Null?"
+msgstr "Lege waarde toestaan?"
+
+#: resources/Field.php:52
+msgid "Specify the returned value on front end"
+msgstr "Specificeer welke waarde wordt getoond in de front end"
+
+#: resources/Field.php:51 resources/FieldForV4.php:73
+msgid "Return Value"
+msgstr "Getoonde waarde"
+
+#: resources/Field.php:28 resources/FieldForV4.php:42
+msgid "Relational"
+msgstr "Relatie"

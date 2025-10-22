@@ -1,0 +1,33 @@
+{
+  "name": "blue",
+  "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get your application up and running.",
+  "main": "webpack.mix.js",
+  "dependencies": {
+    "@barba/core": "^2.9.7",
+    "@fancyapps/fancybox": "^3.5.7",
+    "bootstrap": "5.3.3",
+    "gsap": "npm:@gsap/business@^3.6.0",
+    "jquery": "^3.6.0",
+    "laravel-mix-purgecss": "^6.0.0",
+    "postcss": "^8.2.6",
+    "resolve-url-loader": "^3.1.2",
+    "sass": "^1.32.8",
+    "sass-loader": "^8.0.2",
+    "slick-slider": "^1.8.2"
+  },
+  "devDependencies": {
+    "laravel-mix": "^6.0.13"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "production": "mix --production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://ModditSean@bitbucket.org/moddit/blue.git"
+  },
+  "author": "Moddit",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/moddit/blue#readme"
+}

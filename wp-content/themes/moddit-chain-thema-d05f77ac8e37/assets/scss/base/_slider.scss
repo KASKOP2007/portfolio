@@ -1,0 +1,41 @@
+.slick {
+  &-next,
+  &-prev {
+    &:before {
+      font-family: $font-family-fontawesome !important;
+      font-weight: 600;
+      border: 2px solid #00ffff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: color 0.4s ease, background-color 0.4s ease,
+        box-shadow 0.4s ease;
+    }
+
+    &:hover {
+      &:before {
+        background-color: #00ffff;
+        color: $black;
+        box-shadow: 0 0 25px #00ffff;
+      }
+    }
+  }
+
+  &-next {
+    &:before {
+      content: "\f061" !important;
+    }
+  }
+
+  &-prev {
+    &:before {
+      content: "\f060" !important;
+      position: absolute;
+      top: 0;
+      left: -20px;
+    }
+  }
+}

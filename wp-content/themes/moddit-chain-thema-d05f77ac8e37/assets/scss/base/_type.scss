@@ -1,0 +1,16 @@
+.content-container {
+    @include media-breakpoint-down(sm) {
+        @include font-size(15px);
+    }
+    p, ul, ol {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+.text-balance {
+    text-wrap: balance;
+    @include media-breakpoint-down(sm) {
+        text-wrap: unset;
+    }
+}
